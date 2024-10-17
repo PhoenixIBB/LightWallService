@@ -1,0 +1,56 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Organizer&lt;/title&gt;
+      &lt;link rel="stylesheet" type="text/css" href="/css/style.css"/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Organizer&lt;/h1&gt;
+&lt;h3&gt;Add editor to list&lt;/h3&gt;
+&lt;form action="/add" method="post"&gt;
+    &lt;table border="1px"&gt;
+        &lt;tr&gt;
+            &lt;td&gt;
+                &lt;label&gt;Priority&lt;/label&gt;
+                &lt;input type="number" name="priorityId"&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;label&gt;Description&lt;/label&gt;
+                &lt;input type="text" name="description"&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;label&gt;Date&lt;/label&gt;
+                &lt;input type="text" name="surname"&gt;
+            &lt;/td&gt;
+
+            &lt;td&gt;
+                &lt;input type="submit" value="add editor"&gt;
+            &lt;/td&gt;
+
+        &lt;/tr&gt;
+
+    &lt;/table&gt;
+&lt;/form&gt;
+&lt;br&gt;
+&lt;h2&gt;Editor list(editor count : ${editorSize})&lt;/h2&gt;
+&lt;table border="1px"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Id&lt;/td&gt;
+        &lt;td&gt;Priority&lt;/td&gt;
+        &lt;td&gt;Editor description&lt;/td&gt;
+        &lt;td&gt;Date&lt;/td&gt;
+        &lt;td&gt;Delete from list&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;#list editorList as editor&gt;
+    &lt;tr&gt;
+        &lt;td&gt;${editor.id}&lt;/td&gt;
+        &lt;td&gt;${editor.name}&lt;/td&gt;
+        &lt;td&gt;${editor.surname}&lt;/td&gt;
+        &lt;td&gt;&lt;a href="${'/delete/'+editor.id}""&gt;Delete&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/#list&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
